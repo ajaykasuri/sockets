@@ -46,13 +46,14 @@ io.on('connection', socket => {
 
 // ==== Serve React frontend in production ====
 if (process.env.NODE_ENV === 'production') {
-    const buildPath = path.join(__dirname, 'clint', 'build');
+    const buildPath = path.join(__dirname, '..', 'clint', 'build');
     app.use(express.static(buildPath));
 
     app.get('*', (req, res) => {
         res.sendFile(path.join(buildPath, 'index.html'));
     });
 }
+
 
 // ==== Start server ====
 server.listen(PORT, () => {
