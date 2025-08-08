@@ -18,7 +18,7 @@ const navigate = useNavigate();
 
 
 useEffect(() => {
-    socketRef.current = io.connect('http://localhost:5050');
+    socketRef.current = io.connect('https://sockets-axn3.onrender.com');
 
     navigator.mediaDevices.getUserMedia({ video: true, audio: true })
         .then(stream => {
